@@ -41,7 +41,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: apps/
-          file: ./Dockerfile
+          file: apps/Dockerfile
           platforms: linux/amd64
           push: true
           tags: ahmedito14/python-helloworld:latest
