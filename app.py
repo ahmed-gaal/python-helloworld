@@ -1,6 +1,9 @@
-from flask import Flask
-from flask import json
+"""
+Health check and metrics script
+"""
+import json
 import logging
+from flask import Flask
 
 app = Flask(__name__)
 
