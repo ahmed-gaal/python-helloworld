@@ -29,12 +29,18 @@ mkdir .github/workflows
 
 ## ArgoCD Continuous Delivery
 **********
-*   Run vagrant in secure shell
+*   Assuming you have a running VM instance, run vagrant in secure shell
+```
+vagrant ssh
+```
 *   Install **apparmor**
 ```
 zypper in -t pattern apparmor
 ```
-*   Install ArgoCD from offical documentation
+*   Install ArgoCD CLI using Homebrew
+```
+brew install argocd
+```
 *   Create Namespace
 ```
 kubectl create ns argocd
@@ -75,11 +81,11 @@ argocd-python.yaml
 ```
 <img src='static/app.png' width=80% />
 
-*   Deploy using declarative method:
+*   Deploy to kubernetes using declarative method:
 ```
 kubectl apply -f argocd-python.yaml
 ```
-*   Verify applications are deployed to argocd using:
+*   Verify applications are deployed to argocd namespace using:
 ```
 kubectl get application -n argocd
 ```
